@@ -71,10 +71,11 @@ const Layout = () => {
     const timer = setTimeout(() => {
       setErrorSignUp(null);
       setSuccessSignUp(null);
+      setErrorSignIn(null);
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [errorSignUp, successSignUp]);
+  }, [errorSignUp, successSignUp, errorSignIn]);
 
   const handleSignIn = () => {
     if (usernameSignIn.length < 1 && passwordSignIn.length < 1) {
@@ -113,6 +114,38 @@ const Layout = () => {
   };
 
   const handleSignUp = () => {
+    if (
+      usernameSignUp.length < 1 &&
+      emailSignUp.length < 1 &&
+      passwordSignUp.length < 1 &&
+      confirmPasswordSignUp.length < 1
+    ) {
+      setErrorSignUp(
+        'Please enter your username, email, password and confirm password',
+      );
+      return;
+    }
+
+    if (usernameSignUp.length < 1) {
+      setErrorSignUp('Username is required');
+      return;
+    }
+
+    if (emailSignUp.length < 1) {
+      setErrorSignUp('Email is required');
+      return;
+    }
+
+    if (passwordSignUp.length < 1) {
+      setErrorSignUp('Password is required');
+      return;
+    }
+
+    if (confirmPasswordSignUp.length < 1) {
+      setErrorSignUp('Confirm password is required');
+      return;
+    }
+
     if (!validator.isAlpha(usernameSignUp) || usernameSignUp.length < 6) {
       setErrorSignUp(
         'Username must be at least 6 characters and contain only letters',
