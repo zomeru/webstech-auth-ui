@@ -20,6 +20,13 @@ const names = [
   'Joshua Pamisa',
 ];
 
+const profileLinks = [
+  'https://zomer.xyz',
+  'https://www.facebook.com/mjkb2418',
+  'https://www.facebook.com/lourencejacaba13',
+  'https://www.facebook.com/JoshPamisa1001',
+];
+
 const StyledLayout = styled.div`
   max-height: 100vh;
   position: relative;
@@ -310,7 +317,13 @@ const Layout = () => {
                 images.map((image, index) => (
                   <div key={image + index} className='image_wrapper'>
                     <img src={image} alt={names[index]} />
-                    <a href=''>{names[index]}</a>
+                    <a
+                      href={profileLinks[index]}
+                      target='_blank'
+                      rel='noreferrer noopener'
+                    >
+                      {names[index]}
+                    </a>
                   </div>
                 ))}
             </div>
