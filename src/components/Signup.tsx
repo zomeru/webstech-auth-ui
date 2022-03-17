@@ -105,30 +105,30 @@ const SignUp = ({
       <div className='inputs'>
         <Input
           className='input'
-          label='Enter your username'
-          placeholder='username'
+          label='Username'
+          placeholder='Username'
           value={username}
           setValue={setUsername}
         />
         <Input
           className='input'
-          label='Enter your email'
-          placeholder='email'
+          label='Email'
+          placeholder='Email'
           value={email}
           setValue={setEmail}
         />
         <Input
           className='input'
-          label='Enter your password'
-          placeholder='password'
+          label='Password'
+          placeholder='Password'
           value={password}
           setValue={setPassword}
           password
         />
         <Input
           className='inputLast'
-          label='Confirm your password'
-          placeholder='confirm password'
+          label='Confirm password'
+          placeholder='Confirm password'
           value={confirmPassword}
           setValue={setConfirmPassword}
           password

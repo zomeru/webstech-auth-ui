@@ -6,6 +6,20 @@ import Login from './Login';
 import LoginSuccess from './LoginSuccess';
 import SignUp from './Signup';
 
+const images = [
+  'https://raw.githubusercontent.com/zomeru/webstech-auth-ui/main/src/assets/zoms.jpg',
+  'https://raw.githubusercontent.com/zomeru/webstech-auth-ui/main/src/assets/yolds.jpg',
+  'https://raw.githubusercontent.com/zomeru/webstech-auth-ui/main/src/assets/lourence.png',
+  'https://raw.githubusercontent.com/zomeru/webstech-auth-ui/main/src/assets/josh.jpeg',
+];
+
+const names = [
+  'Zomer Gregorio',
+  'Mark Yoldi',
+  'Lourence Jacaba',
+  'Joshua Pamisa',
+];
+
 const StyledLayout = styled.div`
   max-height: 100vh;
   position: relative;
@@ -54,8 +68,36 @@ const StyledLayout = styled.div`
     padding-top: 10vh;
     padding-left: 10vh;
 
+    .members {
+      max-width: 50%;
+
+      .images_container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 30px;
+      }
+    }
+
     h2 {
       font-weight: 500;
+    }
+
+    .image_wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+      }
+
+      a {
+        text-align: center;
+        margin-top: 5px;
+      }
     }
   }
 
@@ -261,13 +303,16 @@ const Layout = () => {
       </div>
       <div className='second'>
         <div className='second_content'>
-          <div>
+          <div className='members'>
             <h2>Group members:</h2>
-            <div>
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
-              <div>4</div>
+            <div className='images_container'>
+              {images &&
+                images.map((image, index) => (
+                  <div key={image + index} className='image_wrapper'>
+                    <img src={image} alt={names[index]} />
+                    <a href=''>{names[index]}</a>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

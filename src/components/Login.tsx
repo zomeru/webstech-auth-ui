@@ -97,14 +97,14 @@ const Login = ({
       <div className='inputs'>
         <Input
           className='input'
-          label='Enter your username'
-          placeholder='username'
+          label='Username'
+          placeholder='Username'
           value={username}
           setValue={setUsername}
         />
         <Input
           className='inputLast'
-          label='Enter your password'
+          label='Password'
           placeholder='password'
           value={password}
           setValue={setPassword}
