@@ -2,4 +2,4 @@
 
 # Web Systems and Technologies ⚡
 
-<h2><a href="https://webstech-auth-ui.vercel.app/">Demo</a></h2>
+<h2><a href="https://webstech.vercel.app/">Demo</a></h2>
