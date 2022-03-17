@@ -28,8 +28,35 @@ const StyledLayout = styled.div`
   }
 
   .first_content {
+    height: 100%;
     margin: 0 auto;
     max-width: var(--max-width);
+    padding-top: 10vh;
+    padding-left: 10vh;
+    display: flex;
+    align-items: center;
+
+    h2,
+    p {
+      color: #fff;
+    }
+
+    p {
+      margin-top: 10px;
+      max-width: 40%;
+    }
+  }
+
+  .second_content {
+    height: 100%;
+    margin: 0 auto;
+    max-width: var(--max-width);
+    padding-top: 10vh;
+    padding-left: 10vh;
+
+    h2 {
+      font-weight: 500;
+    }
   }
 
   .form_container {
@@ -218,9 +245,33 @@ const Layout = () => {
   return (
     <StyledLayout>
       <div className='first'>
-        <div className='first_content'>1st</div>
+        <div className='first_content'>
+          <div>
+            <h2>Web Systems and Technologies</h2>
+            <p>
+              Web information system, or web-based information system, is an
+              information system that uses Internet web technologies to deliver
+              information and services, to users or other information
+              systems/applications. It is a software system whose main purpose
+              is to publish and maintain data by using hypertext-based
+              principles.
+            </p>
+          </div>
+        </div>
       </div>
-      <div className='second'>2nd</div>
+      <div className='second'>
+        <div className='second_content'>
+          <div>
+            <h2>Group members:</h2>
+            <div>
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className='form_container'>
         {form === 'login' && (
